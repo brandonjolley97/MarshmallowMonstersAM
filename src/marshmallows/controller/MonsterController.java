@@ -6,7 +6,7 @@ import marshmallows.view.MarshmallowOutput;
 public class MonsterController
 {
 	private MarshmallowMonster bolinMonster;
-	private MarshmallowMonster myOutput;
+	private MarshmallowOutput myOutput;
 	
 	public MonsterController()
 	{
@@ -17,7 +17,7 @@ public class MonsterController
 		boolean hasBellyButton = true;
 		String name = "Tragdor the Burninator";
 		
-		myOutput new MarshmallowOutput();
+		myOutput = new MarshmallowOutput();
 		bolinMonster = new MarshmallowMonster(name, eyes, noses, hairs, legs, hasBellyButton);
 	}
 	
