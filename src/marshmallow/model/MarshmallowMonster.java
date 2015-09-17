@@ -52,7 +52,7 @@ public class MarshmallowMonster
 		return monsterLegs;
 	}
 	
-	public boolean getMonsterBellyButtons()
+	public boolean isMonsterBellyButtons()
 	{
 		return monsterBellyButtons;
 	}
