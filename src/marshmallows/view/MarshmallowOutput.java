@@ -1,5 +1,7 @@
 package marshmallows.view;
 
+import javax.swing.JOptionPane;
+
 public class MarshmallowOutput
 {
 	
@@ -8,4 +10,13 @@ public class MarshmallowOutput
 		System.out.println("My monster info is: " + info);
 	}
 	
+	public void displayMonsterGUI(String info)
+	{
+		JOptionPane.showMessageDialog(null, "My monster information is:" + info);
+	}
+	public void displayTerminatorGUI(String info)
+	{
+		JOptionPane.showMessageDialog(null, "You have been TERMINATED!");
+	}
 }
+
