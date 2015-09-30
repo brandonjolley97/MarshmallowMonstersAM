@@ -2,14 +2,15 @@ package marshmallows.controller;
 
 import marshmallow.model.MarshmallowMonster;
 import java.util.Scanner;
-import marshmallows.view.MarshmallowOutput;
+import monster.input.view.MonsterPopupDisplay;
 
 public class MonsterController
 {
 	private MarshmallowMonster bolinMonster;
 	private MarshmallowMonster userMonster;
-	private MarshmallowOutput myOutput;
+	private MonsterPopupDisplay myOutput;
 	private Scanner monsterScanner;
+	
 	
 	public MonsterController()
 	{
@@ -21,17 +22,67 @@ public class MonsterController
 		String name = "Tragdor the Burninator";
 		
 		monsterScanner = new Scanner(System.in);
-		myOutput = new MarshmallowOutput();
+		myOutput = new MonsterPopupDisplay();
 		bolinMonster = new MarshmallowMonster(name, eyes, noses, hairs, legs, hasBellyButton);
 	}
 	
 	public void start()
 	{
-		myOutput.displayMonsterInfo(bolinMonster.toString());
-		myOutput.displayMonsterGUI(bolinMonster.toString());
-		//this.makeUserMonster();
-		//myOutput.displayMonsterInfo("New Monster Info" + userMonster.toString());
-		myOutput.displayTerminatorGUI(bolinMonster.toString());
+		String monsterName = myOutput.grabAnswer("Type in your monster's name.");
+		myOutput.showResponse("You typed: " + monsterName);
+		
+		
+		String monsterEyes = myOutput.grabAnswer("Type in the number of eyes your monster has");
+		int monsterEyes;
+		
+		while(!isInteger(monsterEyes))
+		{
+			monsterEyes=myOutput.grabAnswer("Type in a positive integer for the number of eyes!");
+		}
+		
+		if(isInteger(monsterEyes))
+		{
+			monsterEyes = Integer.parseInt(monsterEyes);
+		}
+		else
+		{
+			monsterEyes = 666;
+		}
+		myOutput.showResponse("You typed: " + monsterEyes);
+		
+		String monsterNoses = myOutput.grabAnswer("Type in the number of noses your monster has.");
+		int monsterNoses;
+		
+		while(!isInteger(monsterNoses))
+		{
+			monsterNoses = myOutput.grabAnswer("Type in a positive integer for the number of noses!!!");
+		}
+		
+		if(isInteger(monsterNoses))
+		{
+			monsterNoses = Integer.parseInt(monsterNoses);
+		}
+		else
+		{
+			monsterNoses = 666;
+		}
+		myOutput.showResponse("You typed: " + monsterNoses);
+		
+		String monsterHairs = myOutput.grabAnswer("Type in the number of hairs your monster has.");
+		double monsterHairs;
+		
+		while (!isInteger(monsterHairs))
+		{
+			monsterHairs = myOutput.grabAnswer("Type in a positive number with a decimal for the number of hairs!!!");
+		}
+		
+		if
+		
+		
+		
+		
+		
+		
 	}
 	
 	
