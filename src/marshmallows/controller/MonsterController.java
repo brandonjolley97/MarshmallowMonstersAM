@@ -164,7 +164,7 @@ public class MonsterController
 		
 		if(false == Boolean.parseBoolean(input))
 		{
-			myOutput.showResponse("Not a Boolean - Bad value will be used.");
+			myOutput.showResponse("Regardless of what you typed, false will be used.");
 		}
 		else
 		{
