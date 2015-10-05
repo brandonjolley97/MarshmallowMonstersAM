@@ -33,7 +33,7 @@ public class MonsterController
 		
 		
 		String monsterEyes = myOutput.grabAnswer("Type in the number of eyes your monster has");
-		int monsterEyes;
+		int monstEyes;
 		
 		while(!isInteger(monsterEyes))
 		{
@@ -42,16 +42,16 @@ public class MonsterController
 		
 		if(isInteger(monsterEyes))
 		{
-			monsterEyes = Integer.parseInt(monsterEyes);
+			monstEyes = Integer.parseInt(monsterEyes);
 		}
 		else
 		{
-			monsterEyes = 666;
+			monstEyes = 666;
 		}
 		myOutput.showResponse("You typed: " + monsterEyes);
 		
 		String monsterNoses = myOutput.grabAnswer("Type in the number of noses your monster has.");
-		int monsterNoses;
+		int monstNoses;
 		
 		while(!isInteger(monsterNoses))
 		{
@@ -60,30 +60,121 @@ public class MonsterController
 		
 		if(isInteger(monsterNoses))
 		{
-			monsterNoses = Integer.parseInt(monsterNoses);
+			monstNoses = Integer.parseInt(monsterNoses);
 		}
 		else
 		{
-			monsterNoses = 666;
+			monstNoses = 666;
 		}
 		myOutput.showResponse("You typed: " + monsterNoses);
 		
 		String monsterHairs = myOutput.grabAnswer("Type in the number of hairs your monster has.");
-		double monsterHairs;
+		double monstHairs;
 		
-		while (!isInteger(monsterHairs))
+		while (!isDouble(monsterHairs))
 		{
 			monsterHairs = myOutput.grabAnswer("Type in a positive number with a decimal for the number of hairs!!!");
 		}
 		
-		if
+		if(isDouble(monsterHairs))
+		{
+			monstHairs = Double.parseDouble(monsterHairs);
+		}
+		else
+		{
+			monstHairs = 6.66;
+		}
+		myOutput.showResponse("You typed: " + monsterHairs);
 		
+		String monsterLegs = myOutput.grabAnswer("Type in the number of legs your monster has.");
+		double monstLegs;
 		
+		while(!isDouble(monsterLegs))
+		{
+			monsterLegs = myOutput.grabAnswer("Type in a positive number with a decimal for the number of legs!!!");
+		}
 		
+		if(isDouble(monsterLegs))
+		{
+			monstLegs = Double.parseDouble(monsterLegs);
+		}
+		else
+		{
+			monstLegs = 6.66;
+		}
+		myOutput.showResponse("You typed: " + monsterLegs);
 		
+		String monsterHasBellyButton = myOutput.grabAnswer("Type in whether your monster has a bellybutton.");
+		boolean monstHasBellyButton;
 		
+		while(!isBoolean(monsterHasBellyButton))
+		{
+			monsterHasBellyButton = myOutput.grabAnswer("Type in true or false for your answer!!!");
+		}
+		
+		if(isBoolean(monsterHasBellyButton))
+		{
+			monstHasBellyButton = Boolean.parseBoolean(monsterHasBellyButton);
+		}
+		else
+		{
+			monstHasBellyButton = true;
+		}
+		myOutput.showResponse("You typed: " + monsterHasBellyButton);
 		
 	}
+	
+	private boolean isInteger(String input)
+	{
+		boolean isInt = false;
+		
+		try
+		{
+			int monster = Integer.parseInt(input);
+			isInt = true;
+		}
+		catch(NumberFormatException error)
+		{
+			myOutput.showResponse("Not an Int - Bad value will be used.");
+		}
+		
+		return isInt;
+	}
+	
+	private boolean isDouble(String input)
+	{
+		boolean isDouble = false;
+		
+		try
+		{
+			double monster = Double.parseDouble(input);
+			isDouble = true;
+		}
+		catch(NumberFormatException error)
+		{
+			myOutput.showResponse("Not a Double - Bad value will be used.");
+		}
+		
+		return isDouble;
+	}
+	
+	private boolean isBoolean(String input)
+	{
+		boolean isBoolean = false;
+		
+		try
+		{
+			boolean monster = Boolean.parseBoolean(input);
+			isBoolean = true;
+		}
+		catch(NumberFormatException error)
+		{
+			myOutput.showResponse("Not a Boolean - Bad value will be used.");
+		}
+		
+		return isBoolean;
+	}
+	
 	
 	
 	private void askQuestions()
