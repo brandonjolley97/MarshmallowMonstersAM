@@ -162,14 +162,13 @@ public class MonsterController
 	{
 		boolean isBoolean = false;
 		
-		try
-		{
-			boolean monster = Boolean.parseBoolean(input);
-			isBoolean = true;
-		}
-		catch(NumberFormatException error)
+		if(false == Boolean.parseBoolean(input))
 		{
 			myOutput.showResponse("Not a Boolean - Bad value will be used.");
+		}
+		else
+		{
+			isBoolean = true;
 		}
 		
 		return isBoolean;
